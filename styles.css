@@ -1,0 +1,16 @@
+svg {
+    fill: #bfebf7;
+}
+
+#title {
+    position: relative;
+    bottom: 220px;
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    letter-spacing: 2.5px;
+    left: 50px;
+}
+
+#sign-up-container {
+    display: block;
+}
