@@ -4,13 +4,58 @@ svg {
 
 #title {
     position: relative;
-    bottom: 220px;
+    bottom: 210px;
     color: rgb(255, 255, 255);
     font-size: 4rem;
     letter-spacing: 2.5px;
     left: 50px;
+    margin-bottom: -50px;
 }
 
-#sign-up-container {
-    display: block;
+#landing-pg-content {
+    color: rgb(67, 67, 67);
+}
+
+#or {
+    background-color: white;
+    position: relative;
+    bottom: 33px;
+    padding: 2px;
+}
+
+#already-account {
+    position: relative;
+    margin-top: -30px;
+}
+
+#back-to-sign-in {
+    margin-left: auto;
+}
+
+/* card flip styling */
+
+#card-container {
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    position: relative;
+}
+
+.front {
+    backface-visibility: hidden;
+    position: absolute;
+    transform: rotateX(0deg);
+}
+
+.back {
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
+.flipCardBack {
+    transform: rotateY(360deg);
 }

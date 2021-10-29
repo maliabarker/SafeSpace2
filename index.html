@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>SafeSpace Sign Up</title>
         
@@ -29,11 +29,11 @@
             </div>
             
             <!--Page Content-->
-            <div class="container">
+            <div class="container" id="landing-pg-content">
                 <div class="row">
                     <!--Left Content-->
-                    <div class="col-5 text-center">
-                        <p>SafeSpace is a <b>safe</b> and <b>anonymous</b> space for students to talk about <b><u>anything</u></b> related to mental health.</b> <br>
+                    <div class="col-5 text-center" id="landing-page-about">
+                        <p>SafeSpace is a <b>safe</b> and <b>anonymous</b> space for students to talk about <b><u>anything</u></b> related to mental health.<br>
                             &#127783;Whether you’re going through a depressive episode&#127783;<br> &#128101;have a family member or friend who is struggling with mental health&#128101; <br> &#128583;or you’re just frustrated with simple everyday things&#128583; </p>
                         <p id="blue-hearts">&#128153; <i>you are welcomed to talk about it here </i>&#128153;</p>
                         <img src="images/Blue-Table.png" width="500px">
@@ -42,70 +42,101 @@
                     <div class="col-2"></div>
                     <!--Right Content-->
                     <div class="col-5" id="sign-up-container">
-                        <h4 class="text-center mb-5">Sign Up Now!</h4>
-                        <form class="text-center">
-                            <div class="form-group pb-4">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                              <small id="emailHelp" class="form-text text-muted">Please enter your Dominican University email.</small>
-                            </div>
-                            <div class="form-group pb-4">
-                              <label for="exampleInputPassword1">Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group pb-4">
-                                <label for="exampleInputPassword1">Re-Enter Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            
-                            <p>Choose an Avatar</p>
-                            <div class="row pb-4">
-                                <div class="col-1"></div>
-                                <div class="col-2">
-                                    <div class="avatar-animals">
-                                        <button type="button" class="btn btn-light" id="avatar-animals-btn"><img src="images/animals.png" alt="avatar choice animal" id="avatar-animals" class="img-fluid"></button>
-                                        <label for="avatar-animals" class="font-weight-light">Random Animal</label>
+                        <div id="card-container">
+                            <div class="front">
+                                <h4 class="text-center mb-5">Sign Up Now!</h4>
+                                <form class="text-center">
+                                    <div class="form-group pb-4">
+                                        <label for="signUpEmail">Email address</label>
+                                        <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <small id="emailHelp" class="form-text text-muted">Please enter your Dominican University email.</small>
                                     </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="avatar-food">
-                                        <button type="button" class="btn btn-light"><img src="images/food.png" alt="avatar food choice" id="avatar-foods" class="img-fluid"></button>
-                                        <label for="avatar-foods" class="font-weight-light">Random Food</label>
+                                    <div class="form-group pb-4">
+                                        <label for="signUpPassword">Password</label>
+                                        <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
                                     </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="avatar-plants">
-                                        <button type="button" class="btn btn-light"><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" class="img-fluid"></button>
-                                        <label for="avatar-plants" class="font-weight-light">Random Plant</label>
+                                    <div class="form-group pb-4">
+                                            <label for="signUpPasswordReEnter">Re-Enter Password</label>
+                                            <input type="password" class="form-control" id="signUpPasswordReEnter" placeholder="Password">
                                     </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="avatar-cities">
-                                        <button type="button" class="btn btn-light"><img src="images/cities.png" alt="avatar cities choice" id="avatar-cities" class="img-fluid"></button>
-                                        <label for="avatar-cities" class="font-weight-light">Random City</label>
+                                        
+                                    <p>Choose an Avatar</p>
+                                    <div class="row pb-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <div class="avatar-animals">
+                                                <button type="button" class="btn btn-light" id="avatar-animals-btn"><img src="images/animals.png" alt="avatar choice animal" id="avatar-animals" class="img-fluid"></button>
+                                                <label for="avatar-animals" class="font-weight-light">Random Animal</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="avatar-food">
+                                                <button type="button" class="btn btn-light"><img src="images/food.png" alt="avatar food choice" id="avatar-foods" class="img-fluid"></button>
+                                                <label for="avatar-foods" class="font-weight-light">Random Food</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="avatar-plants">
+                                                <button type="button" class="btn btn-light"><img src="images/plant.png" alt="avatar plant choice" id="avatar-plants" class="img-fluid"></button>
+                                                <label for="avatar-plants" class="font-weight-light">Random Plant</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="avatar-cities">
+                                                <button type="button" class="btn btn-light"><img src="images/cities.png" alt="avatar cities choice" id="avatar-cities" class="img-fluid"></button>
+                                                <label for="avatar-cities" class="font-weight-light">Random City</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="avatar-colors">
+                                                <button type="button" class="btn btn-light"><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" class="img-fluid"></button>
+                                                <label for="avatar-colors" class="font-weight-light">Random Color</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
                                     </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="avatar-colors">
-                                        <button type="button" class="btn btn-light"><img src="images/colors.png" alt="avatar colors choice" id="avatar-colors" class="img-fluid"></button>
-                                        <label for="avatar-colors" class="font-weight-light">Random Color</label>
+                                    <div class="form-check pb-4">
+                                        <input type="checkbox" class="form-check-input" id="signUpCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
+                                        <label class="form-check-label font-weight-bold" for="signUpCheck1" >I will read and agree to the Community Guidelines</label>
                                     </div>
+                                    <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
+                                </form>
+                                <hr>
+                                <h4 class="text-center"><span id="or">or</span></h4>
+                                <div class="text-center">
+                                    <p id="already-account">Already have an account?</p>
+                                    <button class="text-center btn btn-primary mb-4" id="sign-in-btn">Sign In</button>
                                 </div>
-                                <div class="col-1"></div>
                             </div>
-                            <div class="form-check pb-4">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
-                                <label class="form-check-label font-weight-bold" for="exampleCheck1" >I will read and agree to the Community Guidelines</label>
+                            <div class="back">
+                                <h4 class="text-center mb-4">Sign In!</h4>
+                                <img src="images/animals.png" class="img-thumbnail img-fluid mx-auto d-block mb-5" alt="avatar choice animal" id="avatar-animals" width="90px">
+                                <form class="text-center">
+                                    <div class="form-group pb-4">
+                                        <label for="signInEmail">Email address</label>
+                                        <input type="email" class="form-control" id="signInEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <small id="emailHelp" class="form-text text-muted">Please enter your Dominican University email.</small>
+                                    </div>
+                                    <div class="form-group pb-4">
+                                        <label for="signInPassword">Password</label>
+                                        <input type="password" class="form-control" id="signInPassword" placeholder="Password">
+                                    </div>
+                                    <div class="form-check pb-4">
+                                        <input type="checkbox" class="form-check-input" id="signInCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
+                                        <label class="form-check-label font-weight-bold" for="signInCheck1" >I will read and agree to the Community Guidelines</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
+                                </form>
+                                
+                                <button class="btn btn-secondary float-right" onclick="flipCardBack()" id="back-to-sign-in">Back to Sign Up <i class="fa fa-arrow-circle-o-right"></i></button>
+                                
+                        
                             </div>
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                        <hr>
-                        <h4 class="text-center">or</h4>
-                        <div class="text-center">
-                            <p id="already-account">Already have an account?</p>
-                            <button class="text-center btn btn-primary" onclick="signIn()">Sign In</button>
-                        </div>
+                        </div> 
                     </div>
+                        
+
+                    
                 </div>
             </div>
 
@@ -172,8 +203,10 @@
             </div>
 
 
-<!-- ————————————————————Sign up sign in modal—————————————————————————————————————————————————————————— -->
-            <!--
+<!-- ————————————————————Sign in page—————————————————————————————————————————————————————————— -->
+            
+
+<!--
                 
                 takes user to home page
                 <a href="home-page.html"><button id="sign-up-button"><i class="fas fa-arrow-circle-right"></i> continue</button></a>
@@ -201,6 +234,8 @@
 
 <!-- ————————————————————JS—————————————————————————————————————————————————————————— -->
         <script>
+
+            //uncheck function
             function uncheckAll() {
                 document.querySelectorAll('input[type="checkbox"]')
                 .forEach(el => el.checked = false);
@@ -210,10 +245,23 @@
             document.querySelector('#close-agree-modal').addEventListener('click', uncheckAll)
             document.querySelector('.close').addEventListener('click', uncheckAll)
 
-            function signIn(e) {
-                const signUpContainer = document.getElementById('sign-up-container')
-                signUpContainer.style.display = 'none'
-                console.log('clicked')
+            //card flip function
+
+            const card = document.getElementById('card-container')
+            const signInBtn = document.getElementById('sign-in-btn')
+            const backBtn = document.getElementById('sign-up-back')
+
+            signInBtn.addEventListener('click', flipCard)
+            
+
+            function flipCard() {
+                card.classList.toggle("flipCard")
+                console.log('flipped')
+            }
+
+            function flipCardBack(e) {
+                card.classList.toggle("flipCardBack")
+                console.log('beep')
             }
 
         </script>
