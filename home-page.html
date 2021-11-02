@@ -1,1 +1,384 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace Home</title>
+
+    <!-- linking fontawesome icon stylesheet -->
+    <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--BOOTSTRAP JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--CUSTOM STYLESHEET-->
+    <link rel="stylesheet" href="home-styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand ml-2 " href="home-page.html">Safespace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <span class="navbar-text ml-auto">
+                <ul class="navbar-nav mr-2">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home-page.html"><i class="fas fa-home" id="home" title="Back to Home"></i><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cog" id="settings" title="User Settings"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-hands-helping" id="community" title="Community Resources"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-power-off" id="logout" title="Logout"></i></a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container" >
+            <h5 class="text-center pb-4 text-muted">Welcome back Anonymous Squirrel!</h5>
+            <div id="make-post" class="justify-content-center ">
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <div class="ml-auto d-block border rounded-circle" id="avatar-circle"></div>
+                        <img class="ml-auto d-block p-2" src="images/animals.png" alt="squirrel avatar" height="90" id="avatar-top">  
+                    </div>
+
+                    <div class="col-6">
+                        <input type="text" class="form-control p-4" placeholder="What's on your mind today?" data-toggle="modal" data-target="#make-post-modal">
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <hr>
+
+    
+
+<!--————————————————————————————Make a Post Module————————————————————————————————————-->
+    <div class="modal" tabindex="-1" role="dialog" id="make-post-modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/animals.png" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">Anonymous Squirrel</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="home-page.html" id="submit-post">
+                        <div class="form-group">
+                            <textarea id="make-post-textarea" cols="50" rows="10" placeholder="Feel free to talk, this is a safe space..." class="form-control p-2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="submit-post" class="btn btn-primary">Post</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+            <!-- <div id = "all-posts">
+
+                <section id="pseudo-post-1">
+                    <section id="pseudo-post">
+                        <div id="post-top">
+                            <div><img src="images/plant.png" alt="squirrel avatar" id="avatar-img" width="50px"></div>
+                            <div id="name-date">
+                                <h3>Anonymous Plant</h3>
+                                <div><time datetime="2021-10-14 02:39">Oct 14, 2021</time></div>
+                            </div>
+                            <p id="info-button"><i class="fas fa-info-circle"></i></p>
+                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete" onclick="deletePost()"></i></p>
+                        </div>
+
+                        <div id="post-content-container">
+                            <hr>
+                            <p id="post-content">post content</p>
+                            <hr>
+                        </div>
+                
+                        <div id="post-info">
+                            <p id="comment-info"><i class="fas fa-comments" id="comments" title="Comment"></i> 0 Comments</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span>0 Upvotes</span></p>
+                            <p><i class="fas fa-thumbs-down" title="Downvote Post" onclick="downvote()"></i> <span>0 Downvotes</span></p>
+                        </div>
+                    </section>
+
+                    <hr id="post-separator">
+                </section>
+
+                <section class="pseudo-post-2">
+                    <section id="pseudo-post">
+                        <div id="post-top">
+                            <div><img src="images/food.png" alt="food avatar" id="avatar-img" width="50px"></div>
+                            <div id="name-date">
+                                <h3>Anonymous Hamburger</h3>
+                                <div><time datetime="2021-10-11 02:39">Oct 11, 2021</time></div>
+                            </div>
+                            <p id="info-button"><i class="fas fa-info-circle"></i></p>
+                            <p id="delete-post"><i class="fas fa-times-circle" id="delete-post" title="Delete" onclick="deletePost()"></i></p>
+                        </div>
+
+                        <div id="post-content-container">
+                            <hr>
+                            <p id="post-content">post content</p>
+                            <hr>
+                        </div>
+                
+                        <div id="post-info">
+                            <p><i class="fas fa-comments" id="comments" title="Comment"></i> 0 Comments</p>
+                            <p><i class="fas fa-thumbs-up" title="Upvote Post" onclick="upvote()"></i> <span>0 Upvotes</span></p>
+                            <p><i class="fas fa-thumbs-down" title="Downvote Post" onclick="downvote()"></i> <span>0 Downvotes</span></p>
+                        </div>
+                    </section>
+
+                    <hr id="post-separator">
+                </section>
+            </div> -->
+
+        <!-- </main>
+
+        <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
+        <script>
+            let globalcount = 0;
+
+            function newDate() {
+                const d = new Date();
+                const day = d.getDate()
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const newMonth = months[d.getMonth()]
+                const year = d.getFullYear()
+                const fullDate = `${newMonth} ${day}, ${year}`
+                // console.log(fullDate)
+                return fullDate
+            }
+
+            function addImg() {
+                const newImg = document.createElement('img')
+                const avatarImg = document.getElementById('modal-avatar-img').src
+                newImg.src = avatarImg
+                console.log(avatarImg)
+                return newImg
+            }
+
+            function postTop() {
+                // create post-top div element
+                const postTop = document.createElement('div');
+                postTop.setAttribute('id', 'post-top');
+
+                // create img container div element and append
+                const imgContainer = document.createElement('div');
+                postTop.appendChild(imgContainer);
+                const newImg = addImg();
+                newImg.setAttribute('id', 'avatar-img')
+                newImg.style.width = '50px'
+                imgContainer.appendChild(newImg);
+
+
+                // create name and date 
+                const nameAndDate = document.createElement('div');
+                nameAndDate.setAttribute('id', 'name-date');
+                postTop.appendChild(nameAndDate);
+
+                const usernameDisplay = document.createElement('h3');
+                usernameDisplay.setAttribute('id', 'post-username');
+                const username = document.getElementById('username').textContent
+                usernameDisplay.innerHTML = username;
+                nameAndDate.appendChild(usernameDisplay);
+
+                const dateDisplay = document.createElement('div');
+                dateDisplay.setAttribute('id', 'date');
+                const d = newDate();
+                dateDisplay.innerHTML = d;
+                nameAndDate.appendChild(dateDisplay);
+
+                // create info button
+                const infoButton = document.createElement('p');
+                infoButton.setAttribute('id', 'info-button');
+                postTop.appendChild(infoButton);
+                const infoIcon = document.createElement('i');
+                infoIcon.setAttribute('class', 'fas fa-info-circle');
+                infoButton.appendChild(infoIcon);
+
+                // create delete button
+                const deleteButton = document.createElement('p')
+                deleteButton.setAttribute('id', 'delete-button')
+                postTop.appendChild(deleteButton);
+                const deleteIcon = document.createElement('i');
+                deleteIcon.setAttribute('class', 'fas fa-times-circle')
+                deleteIcon.setAttribute('id', 'delete-post');
+                deleteIcon.setAttribute('onclick', 'deletePost()');
+                deleteButton.appendChild(deleteIcon);
+
+                return postTop;
+            }
+
+            function content() {
+                const contentContainer = document.createElement('div');
+                contentContainer.setAttribute('id', 'post-content-container');
+
+                const line1 = document.createElement('hr');
+                contentContainer.appendChild(line1);
+
+                const content = document.createElement('p');
+                content.setAttribute('id', 'post-content');
+                const textInput = document.getElementById('make-post-textarea').value;
+                content.innerHTML = textInput
+                contentContainer.appendChild(content);
+
+                const line2 = document.createElement('hr');
+                contentContainer.appendChild(line2);
+
+                return contentContainer;
+            }
+
+            function postInfo() {
+                const postInfo = document.createElement('div');
+                postInfo.setAttribute('id', 'post-info')
+
+                const comments = document.createElement('p');
+                comments.innerHTML = ' 0 Comments';
+                const commentIcon = document.createElement('i');
+                commentIcon.setAttribute('class', 'fas fa-comments');
+                comments.insertBefore(commentIcon, comments.firstChild);
+                postInfo.appendChild(comments);
+
+                const upvote = document.createElement('p');
+                // upvote.innerHTML = ' 0 Upvotes';
+                const upvoteIcon = document.createElement('i');
+                upvoteIcon.setAttribute('class', 'fas fa-thumbs-up');
+                upvoteIcon.setAttribute('onclick', 'upvote()');
+                upvoteIcon.setAttribute('title', 'Upvote Post');
+                const upvoteNum = document.createElement('span');
+                upvoteNum.innerHTML = ' 0 Upvotes';
+                upvote.appendChild(upvoteIcon);
+                upvote.appendChild(upvoteNum);
+                postInfo.appendChild(upvote);
+
+                const downvote = document.createElement('p');
+                const downvoteIcon = document.createElement('i');
+                downvoteIcon.setAttribute('class', 'fas fa-thumbs-down');
+                downvoteIcon.setAttribute('title', 'Downvote Post');
+                downvoteIcon.setAttribute('onclick', 'downvote()');
+                const downvoteNum = document.createElement('span');
+                downvoteNum.innerHTML = ' 0 Downvotes';
+                downvote.appendChild(downvoteIcon);
+                downvote.appendChild(downvoteNum);
+                postInfo.appendChild(downvote);
+
+                return postInfo;
+            }
+
+            function newPost() {
+                const postsContainer = document.createElement('div');
+                postsContainer.setAttribute('id', 'posts-container' + globalcount++);
+                const post = document.createElement('section')
+                post.setAttribute('id', 'pseudo-post');
+                postsContainer.appendChild(post);
+                const line = document.createElement('hr');
+                line.setAttribute('id', 'post-separator');
+                postsContainer.appendChild(line);
+                // const pseudoPost = document.getElementById('new-pseudo-post');
+
+                const postTopContent = postTop();
+                const postContent = content();
+                const info = postInfo();
+                // const newContent = displayContent()
+
+                post.appendChild(postTopContent);
+                post.appendChild(postContent);
+                post.appendChild(info);
+
+                return postsContainer
+            }
+
+            function makePost(e) {
+                const allPosts = document.getElementById('all-posts')
+                const post = newPost()
+
+                allPosts.insertBefore(post, allPosts.firstChild)
+
+                document.getElementById('make-post-textarea').value = "";
+                hideModal()
+            }
+
+            function deletePost(e) {
+                const deleteIcon = event.target;
+                const deleteIconParent = deleteIcon.parentElement
+                const deleteIconGrandparent = deleteIconParent.parentElement.parentElement.parentElement
+                console.log(deleteIconGrandparent)
+
+                deleteIconGrandparent.remove();
+            }
+
+            function upvote(e) {
+                const target = event.target;
+                // console.log(target.nextElementSibling.nextElementSibling)
+                // console.log(target);
+                const upvotes = target.nextElementSibling.nextElementSibling
+                // console.log(upvotes.textContent)
+                let upvoteStr = upvotes.textContent
+                console.log(upvoteStr)
+                let numStr = parseFloat(upvoteStr.replace(/\D/g, ''));
+                // console.log(numStr)
+                const clicked = event.target;
+                // console.log(clicked)
+                
+                if(clicked.style.color === 'rgb(140, 182, 194)'){
+                    clicked.style.color = "#323F4B";
+                    newNum = --numStr;
+                    upvotes.innerHTML = `${newNum} Upvotes`
+                }
+                else{
+                    clicked.style.color = "#8cb6c2";
+                    //do your businesses  
+                    newNum = ++numStr
+                    console.log(newNum)
+                    upvotes.innerHTML = `${newNum} Upvotes`
+                } 
+            }
+
+            function downvote(e) {
+                const target = event.target;
+                // console.log(target.nextElementSibling.nextElementSibling)
+                // console.log(target);
+                const upvotes = target.nextElementSibling.nextElementSibling
+                // console.log(upvotes.textContent)
+                let upvoteStr = upvotes.textContent
+                console.log(upvoteStr)
+                let numStr = parseFloat(upvoteStr.replace(/\D/g, ''));
+                // console.log(numStr)
+                const clicked = event.target;
+                // console.log(clicked)
+                
+                if(clicked.style.color === 'rgb(140, 182, 194)'){
+                    clicked.style.color = "#323F4B";
+                    newNum = --numStr;
+                    upvotes.innerHTML = `${newNum} Downvotes`
+                }
+                else{
+                    clicked.style.color = "#8cb6c2";
+                    //do your businesses  
+                    newNum = ++numStr
+                    console.log(newNum)
+                    upvotes.innerHTML = `${newNum} Downvotes`
+                } 
+            }
+        </script>
+    </body>
+</html> -->

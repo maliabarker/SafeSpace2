@@ -1,0 +1,20 @@
+#avatar-circle {
+    z-index: 1;
+    position: relative;
+    top: 42px;
+    right: 2px;
+    height: 90px;
+    width: 90px;
+    background-color: white;
+    border-color: white;
+}
+
+#avatar-top {
+    z-index: 2;
+    position: relative;
+    bottom: 50px;
+}
+
+#make-post {
+    background-color: #bfebf7;
+}

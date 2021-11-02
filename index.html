@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>SafeSpace Sign Up</title>
+        <title>Welcome to SafeSpace</title>
         
         <!-- linking fontawesome icon stylesheet -->
         <script src="https://kit.fontawesome.com/7533af764e.js" crossorigin="anonymous"></script>
@@ -46,7 +46,7 @@
                         <div id="card-container">
                             <div class="front">
                                 <h4 class="text-center mb-5">Get Started! &#127882;</h4>
-                                <form class="text-center">
+                                <form class="text-center" action="home-page.html">
                                     <div class="form-group pb-4">
                                         <label for="signUpEmail">Email address</label>
                                         <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -99,7 +99,7 @@
                                         <input type="checkbox" class="form-check-input" id="signUpCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
                                         <label class="form-check-label font-weight-bold" for="signUpCheck1" >I will read and agree to the Community Guidelines</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
+                                    <button class="btn btn-primary mb-4">Sign Up</button>
                                 </form>
                                 <hr>
                                 <h4 class="text-center"><span id="or">or</span></h4>
@@ -111,7 +111,7 @@
                             <div class="back">
                                 <h4 class="text-center mb-4">Sign In!</h4>
                                 <img src="images/animals.png" class="img-thumbnail img-fluid mx-auto d-block mb-5" alt="avatar choice animal" id="avatar-animals" width="90px">
-                                <form class="text-center">
+                                <form class="text-center" >
                                     <div class="form-group pb-4">
                                         <label for="signInEmail">Email address</label>
                                         <input type="email" class="form-control" id="signInEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -125,7 +125,7 @@
                                         <input type="checkbox" class="form-check-input" id="signInCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
                                         <label class="form-check-label font-weight-bold" for="signInCheck1" >I will read and agree to the Community Guidelines</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mb-4">Sign In</button>
+                                    <button class="btn btn-primary mb-4">Sign In</button>
                                 </form>
                                 <button class="btn btn-secondary float-right" onclick="flipCardBack()" id="back-to-sign-in">Back to Sign Up <i class="fa fa-arrow-circle-o-right"></i></button>
                             </div>
