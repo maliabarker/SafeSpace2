@@ -6,6 +6,21 @@ nav {
     font-size: 2rem;
 }
 
+#make-post-container {
+    margin-bottom: 120px;
+}
+
+#make-post-title {
+    position: relative;
+    top: 15px;
+    font-size: 2rem;
+    margin-bottom: -27px;
+    letter-spacing: 4px;
+    font-weight: lighter;
+}
+
+
+
 #avatar-circle {
     z-index: 1;
     position: relative;
@@ -36,8 +51,6 @@ nav {
     border-color: #bfebf7;
 }
 
-
-
 #pseudo-post-circle {
     width: 100px;
     height: 100px;
@@ -55,8 +68,15 @@ nav {
     right: 9px;
 }
 
-body > #pseudo-post-container > #pseudo-post-content{
-    border: solid;
-    border-radius: 25px;
-    background-color: purple;
+#pseudo-plant-avatar-img {
+    position: relative;
+    z-index: 2;
+    bottom: 15px;
+    left: 4px;
+}
+
+#sticky > ul{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
