@@ -1,3 +1,11 @@
+nav {
+    background-color: #676f83;
+}
+
+#navbar-title {
+    font-size: 2rem;
+}
+
 #avatar-circle {
     z-index: 1;
     position: relative;
@@ -16,5 +24,39 @@
 }
 
 #make-post {
-    background-color: #bfebf7;
+    background-color: #676f835d;
+}
+
+#delete-post {
+    color: tomato;
+}
+
+.btn-primary {
+    background-color: #4d96ac;
+    border-color: #bfebf7;
+}
+
+
+
+#pseudo-post-circle {
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    position: relative;
+    bottom: 60px;
+    background-color: white;
+    margin-bottom: -140px;
+}
+
+#pseudo-avatar-img {
+    position: relative;
+    z-index: 2;
+    bottom: 30px;
+    right: 9px;
+}
+
+body > #pseudo-post-container > #pseudo-post-content{
+    border: solid;
+    border-radius: 25px;
+    background-color: purple;
 }

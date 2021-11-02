@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="home-styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-2 " href="home-page.html">Safespace</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <a class="navbar-brand ml-2 " href="home-page.html" id="navbar-title">Safespace</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,9 +61,130 @@
         </div>
     </div>
 
-    <hr>
+    <div class="container" id="pseudo-post-1">
+        <div class="col-10 offset-sm-1 p-4 bg-light" id="psuedo-post">
+            <div class="row">
+                <div class="col-1 offset-sm-1">
+                    <img src="images/plant.png" alt="plant avatar" id="avatar-img" class="img-fluid">
+                </div>
+                <div class="col-3 text-center">
+                    <h5 class="text-muted">Anonymous Plant</h5>
+                    <time datetime="2021-10-14 02:39" class="text-muted">Oct 14, 2021</time>
+                </div>
+                <div class="col-7">
+                    <div class="row d-flex justify-content-end">
+                        <i class="fas fa-info-circle pr-2 text-muted"></i>
+                        <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
+                    </div>
+                </div>
 
-    
+            </div>
+            <hr>
+            <p class="text-center">Post content</p>
+            <hr>
+            <div class="row d-flex justify-content-end pr-4">
+                <p class="text-muted pr-2"><i class="fas fa-comments pr-2" id="comments" title="Comment"></i>0 comments</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-up pr-2" title="Upvote Post" onclick="upvote()"></i>0 upvotes</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
+            </div>
+        </div>
+        <div class="col-10 offset-sm-1">
+            <hr class="my-5">
+        </div>
+    </div>
+
+    <div class="container" id="pseudo-post-2">
+        <div class="col-10 offset-sm-1 p-4 bg-light" id="psuedo-post">
+            <div class="row">
+                <div class="col-1 offset-sm-1">
+                    <img src="images/food.png" alt="food avatar" id="avatar-img" class="img-fluid">
+                </div>
+                <div class="col-3 text-center">
+                    <h5 class="text-muted">Anonymous Plant</h5>
+                    <time datetime="2021-10-13 02:39" class="text-muted">Oct 13, 2021</time>
+                </div>
+                <div class="col-7">
+                    <div class="row d-flex justify-content-end">
+                        <i class="fas fa-info-circle pr-2 text-muted"></i>
+                        <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <p class="text-center">Post content</p>
+            <hr>
+            <div class="row d-flex justify-content-end pr-4">
+                <p class="text-muted pr-2"><i class="fas fa-comments pr-2" id="comments" title="Comment"></i>0 comments</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-up pr-2" title="Upvote Post" onclick="upvote()"></i>0 upvotes</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
+            </div>
+        </div>
+        <div class="col-10 offset-sm-1">
+            <hr class="my-5">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-10 offset-sm-1 pb-3">
+            <div class="row d-flex justify-content-end">
+                <i class="fas fa-info-circle pr-2 text-muted"></i>
+                <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
+            </div>
+        </div>
+
+        <div class="col-10 offset-sm-1 p-4 bg-light" style="border-radius:35px">
+            <div class="col-2">
+                <div class="border rounded-circle" id="pseudo-post-circle"></div>
+                <img src="images/food.png" alt="food avatar" id="pseudo-avatar-img" width="116">
+            </div>
+            <div class="col-10 offset-sm-1">
+                <hr>
+                <p class="text-center">Post Content</p>
+                <hr>
+                <time datetime="2021-10-14 02:39" class="text-muted d-flex justify-content-end">Oct 14, 2021</time>
+            </div>
+        </div>
+
+        <div class="col-10 offset-sm-1 py-3">
+            <div class="row d-flex justify-content-end pr-4">
+                <p class="text-muted pr-2"><i class="fas fa-comments pr-2" id="comments" title="Comment"></i>0 comments</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-up pr-2" title="Upvote Post" onclick="upvote()"></i>0 upvotes</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-10 offset-sm-1 pb-3">
+            <div class="row d-flex justify-content-end">
+                <i class="fas fa-info-circle pr-2 text-muted"></i>
+                <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
+            </div>
+        </div>
+
+        <div class="col-10 offset-sm-1 p-4 bg-light" style="border-radius:35px">
+            <div class="col-2">
+                <div class="border rounded-circle" id="pseudo-post-circle"></div>
+                <img src="images/food.png" alt="food avatar" id="pseudo-avatar-img" width="116">
+            </div>
+            <div class="col-10 offset-sm-1">
+                <hr>
+                <p class="text-center">Post Content</p>
+                <hr>
+                <time datetime="2021-10-13 02:39" class="text-muted d-flex justify-content-end">Oct 13, 2021</time>
+            </div>
+        </div>
+
+        <div class="col-10 offset-sm-1 py-3">
+            <div class="row d-flex justify-content-end pr-4">
+                <p class="text-muted pr-2"><i class="fas fa-comments pr-2" id="comments" title="Comment"></i>0 comments</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-up pr-2" title="Upvote Post" onclick="upvote()"></i>0 upvotes</p>
+                <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
+            </div>
+        </div>
+    </div>
+
 
 <!--————————————————————————————Make a Post Module————————————————————————————————————-->
     <div class="modal" tabindex="-1" role="dialog" id="make-post-modal">
