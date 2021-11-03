@@ -38,19 +38,34 @@ nav {
     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
     100% { transform: rotate( 0.0deg) }
 }
+.form-inline > .btn {
+    border-color: #4d96ac;
+    color: #4d96ac;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.form-inline > .btn:hover {
+    background-color: white;
+}
 
 #sidebar > ul > li:hover {
     cursor: pointer;
     color: #4d96ac;
 }
 
+#sidebar > ul > a{
+    color: #6e767d;
+}
+
+#sidebar > ul > a:hover{
+    color: #4d96ac;
+    text-decoration: none;
+}
+
 .dropdown-container > li:hover {
     cursor: pointer;
     color: #4d96ac;
-}
-
-.active {
-    color: red;
 }
 
 .dropdown-container {

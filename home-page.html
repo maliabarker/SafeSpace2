@@ -27,15 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <span class="navbar-text ml-auto">
                 <ul class="navbar-nav mr-2">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home-page.html"><i class="fas fa-home" id="home" title="Back to Home"></i><span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-hands-helping" id="community" title="Community Resources"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-power-off" id="logout" title="Logout"></i></a>
-                    </li>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </ul>
             </span>
         </div>
@@ -51,30 +46,32 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="sidebar">
-                    <ul class="nav flex-column list-group list-group-flush text-muted">
+                <div class="collapse show" id="sidebar">
+                    <ul class="nav flex-column list-group list-group-flush text-muted" id="sidebar">
                         <li class="nav-item list-group-item bg-light dropdown-btn my-3" style="border:solid 1px; border-radius:10px">
                             <div class="row align-items-center" id="dropdown-content">
-                                <img src="images/animals.png" alt="squirrel avatar" height="40">
-                                <span class="pr-1">Anonymous Squirrel</span>
-                                <i class="fa fa-caret-down"></i>
+                                <img src="images/animals.png" alt="squirrel avatar" height="40" class="ml-2">
+                                <span class="ml-2">Anonymous Squirrel</span>
+                                <i class="fa fa-caret-down ml-auto"></i>
                             </div>
                         </li>
                         <div class="dropdown-container">
+                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-clipboard"></i> View My Posts</li>
                             <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-cog" id="settings" title="User Settings"></i> Settings</li>
-                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-lock"></i> Security and Privacy</li>
+                            <li href="#" class="nav-item list-group-item bg-light mb-1"><i class="fas fa-lock"></i> Security and Privacy</li>
                         </div>
-                        <li class="nav-item list-group-item bg-light dropdown-btn">
-                            <span>Community Resources</span>
+                        <li class="nav-item list-group-item bg-light mb-1"><i class="fas fa-home"></i> Home</li>
+                        <li class="nav-item list-group-item bg-light dropdown-btn mb-1">
+                            <span><i class="fas fa-hands-helping" id="community" title="Community Resources"></i> Community Resources<i class="fa fa-caret-down pt-1"></i></span>
                         </li>
                         <div class="dropdown-container">
-                            <li href="#" class="nav-item list-group-item bg-light">On Campus</li>
-                            <li href="#" class="nav-item list-group-item bg-light">Online</li>
-                            <li href="#" class="nav-item list-group-item bg-light">Near Me</li>
+                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-school"></i> On Campus</li>
+                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-wifi"></i> Online</li>
+                            <li href="#" class="nav-item list-group-item bg-light mb-1"><i class="fas fa-map-marked"></i> Near Me</li>
                         </div>
-                        <li class="nav-item list-group-item bg-light">Channels</li>
-                        <li class="nav-item list-group-item bg-light">Make a Report</li>
-                        <li class="nav-item list-group-item bg-light">Logout</li>
+                        <li class="nav-item list-group-item bg-light mb-1"><i class="fas fa-comment-alt"></i> Channels</li>
+                        <li class="nav-item list-group-item bg-light mb-1"><i class="fas fa-flag"></i> Make a Report</li>
+                        <a href="index.html"><li class="nav-item list-group-item bg-light"><i class="fas fa-power-off" id="logout" title="Logout"></i> Logout</li></a>
                     </ul>
                 </div>
             </nav>
