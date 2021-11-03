@@ -78,44 +78,15 @@
             
             <div class="col-9">
                 <!--——————————————Top Title———————————————————————————-->
-                <h5 class="text-center pb-4 pt-4 text-muted">Welcome back Anonymous Squirrel <span class="wave">&#128075;</span></h5>
-                <!--——————————————Make a Post Container———————————————————————————-->
-
-                <div class="container" id="make-post-container">
-                    <div class="col-8 offset-sm-2">
-                        <div id="make-post" class="justify-content-center" style="border-radius:25px">
-                            <div class="col-10 offset-sm-1">
-                                <p class="text-center text-muted" id="make-post-title">MAKE A POST...</p>
-                            </div>
-                            
-                            <div class="row align-items-center">
-                                <div class="col-4">
-                                    <div class="ml-auto d-block border rounded-circle" id="avatar-circle"></div>
-                                    <img class="ml-auto d-block p-2" src="images/animals.png" alt="squirrel avatar" height="90" id="avatar-top">  
-                                </div>
-                
-                                <div class="col-6">
-                                    <input type="text" class="form-control p-4" placeholder="What's on your mind today?" data-toggle="modal" data-target="#make-post-modal">
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                </div>
+                <h3 class="text-center pb-4 pt-5 text-muted">View Your Posts <span class="wave">&#x1f440;</span></h3>
                 
                 <!--——————————————Pseudo Post One———————————————————————————-->
 
                 <div class="container mt-5">
-                    <div class="col-10 offset-sm-1 pb-3">
-                        <div class="row d-flex justify-content-end">
-                            <i class="fas fa-info-circle pr-2 text-muted"></i>
-                            <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
-                        </div>
-                    </div>
-            
                     <div class="col-10 offset-sm-1 p-4 bg-light" style="border-radius:35px">
                         <div class="col-2">
                             <div class="border rounded-circle" id="pseudo-post-circle"></div>
-                            <img src="images/food.png" alt="food avatar" id="pseudo-avatar-img" width="116">
+                            <img src="images/animals.png" alt="food avatar" id="posts-avatar-img" width="80">
                         </div>
                         <div class="col-10 offset-sm-1">
                             <hr>
@@ -132,22 +103,26 @@
                             <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
                         </div>
                     </div>
+
+                    <div class="col-10 offset-sm-1">
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-end">
+                                <button class="btn btn-outline-success px-4">Edit Post</button>
+                            </div>
+                            <div class="col-5">
+                                <button class="btn btn-outline-danger px-4">Delete Post</button>
+                            </div>
+                        </div>
+                    </div>
                     <hr class="mb-5">
                 </div>
 
                 <!--——————————————Pseudo Post Two———————————————————————————-->
                 <div class="container">
-                    <div class="col-10 offset-sm-1 pb-3">
-                        <div class="row d-flex justify-content-end">
-                            <i class="fas fa-info-circle pr-2 text-muted"></i>
-                            <i class="fas fa-times-circle pr-4" id="delete-post" title="Delete" onclick="deletePost()"></i>
-                        </div>
-                    </div>
-            
                     <div class="col-10 offset-sm-1 p-4 bg-light" style="border-radius:35px">
                         <div class="col-2">
                             <div class="border rounded-circle" id="pseudo-post-circle"></div>
-                            <img src="images/plant.png" alt="plant avatar" id="pseudo-plant-avatar-img" width="90">
+                            <img src="images/animals.png" alt="plant avatar" id="posts-avatar-img" width="80">
                         </div>
                         <div class="col-10 offset-sm-1">
                             <hr>
@@ -164,37 +139,22 @@
                             <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
                         </div>
                     </div>
+                    <div class="col-10 offset-sm-1">
+                        <div class="row">
+                            <div class="col-6 d-flex justify-content-end">
+                                <button class="btn btn-outline-success px-4">Edit Post</button>
+                            </div>
+                            <div class="col-5">
+                                <button class="btn btn-outline-danger px-4">Delete Post</button>
+                            </div>
+                        </div>
+                    </div>
                     <hr class="mb-5">
                 </div>
             </div>
         </div>
     </div>
 
-
-<!--————————————————————————————Make a Post Module————————————————————————————————————-->
-    <div class="modal" tabindex="-1" role="dialog" id="make-post-modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img src="images/animals.png" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">Anonymous Squirrel</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="home-page.html" id="submit-post">
-                        <div class="form-group">
-                            <textarea id="make-post-textarea" cols="50" rows="10" placeholder="Feel free to talk, this is a safe space..." class="form-control p-2"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" form="submit-post" class="btn btn-primary">Post</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <!--CUSTOM JS-->
     <script type="text/javascript" src="scripts.js"></script>
 </body>

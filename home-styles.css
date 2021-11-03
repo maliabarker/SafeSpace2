@@ -49,6 +49,16 @@ nav {
     background-color: white;
 }
 
+.dropdown-container > a {
+    color: #6e767d;
+}
+
+.dropdown-container > a:hover {
+    cursor: pointer;
+    color: #4d96ac;
+    text-decoration: none;
+}
+
 #sidebar > ul > li:hover {
     cursor: pointer;
     color: #4d96ac;
@@ -142,4 +152,11 @@ nav {
 
 #sticky {
     background-color: white;
+}
+
+#posts-avatar-img {
+    position: relative;
+    z-index: 2;
+    bottom: 18px;
+    left: 14px;
 }
