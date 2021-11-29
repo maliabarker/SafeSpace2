@@ -1,0 +1,24 @@
+<div class="modal" tabindex="-1" role="dialog" id="make-post-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="{{ user.avatar }}" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">{{ user.username }}</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="submit-post" method="POST" action="/{{ user._id }}/home">
+
+                    <div class="form-group">
+                        <textarea id="make-post-textarea" cols="50" rows="10" placeholder="Feel free to talk, this is a safe space..." class="form-control p-2" name="content"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="submit-post" class="btn btn-primary">Post</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

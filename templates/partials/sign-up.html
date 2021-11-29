@@ -1,12 +1,12 @@
 <form class="text-center" method="POST" action="/">
     <div class="form-group pb-4">
         <label for="signUpEmail">Email address</label>
-        <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
         <small id="emailHelp" class="form-text text-muted">Please enter your Dominican University email.</small>
     </div>
     <div class="form-group pb-4">
         <label for="signUpPassword">Password</label>
-        <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+        <input type="password" class="form-control" id="signUpPassword" placeholder="Password" name="password">
     </div>
     <div class="form-group pb-4">
             <label for="signUpPasswordReEnter">Re-Enter Password</label>
@@ -15,22 +15,21 @@
     <p>Choose an Avatar</p>
     <div class="btn-group btn-group-toggle pb-4" data-toggle="buttons">
         <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked> <img src="static/images/animals.png" alt="avatar choice animal" id="avatar-animals" class="img-fluid">Random Animal
+            <input type="radio" name="options" id="option1" value="animals" checked> <img src="static/images/animals.png" alt="avatar choice animal" id="avatar-animals" class="img-fluid">Random Animal
         </label>
         <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2"> <img src="static/images/food.png" alt="avatar food choice" id="avatar-foods" class="img-fluid">Random Food 
+            <input type="radio" name="options" id="option2" value="food"> <img src="static/images/food.png" alt="avatar food choice" id="avatar-foods" class="img-fluid">Random Food 
         </label>
         <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> <img src="static/images/plant.png" alt="avatar plant choice" id="avatar-plants" class="img-fluid">Random Plant
+            <input type="radio" name="options" id="option3" value="plant"> <img src="static/images/plant.png" alt="avatar plant choice" id="avatar-plants" class="img-fluid">Random Plant
         </label>
         <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> <img src="static/images/cities.png" alt="avatar cities choice" id="avatar-cities" class="img-fluid">Random City
+            <input type="radio" name="options" id="option4" value="cities"> <img src="static/images/cities.png" alt="avatar cities choice" id="avatar-cities" class="img-fluid">Random City
         </label>
         <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> <img src="static/images/colors.png" alt="avatar colors choice" id="avatar-colors" class="img-fluid">Random Color
+            <input type="radio" name="options" id="option5" value="colors"> <img src="static/images/colors.png" alt="avatar colors choice" id="avatar-colors" class="img-fluid">Random Color
         </label>
     </div>
-    
     <div class="form-check pb-4">
         <input type="checkbox" class="form-check-input" id="signUpCheck1" data-toggle="modal" data-target="#exampleModalLong" required>
         <label class="form-check-label font-weight-bold" for="signUpCheck1" >I will read and agree to the Community Guidelines</label>
