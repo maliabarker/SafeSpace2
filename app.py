@@ -54,9 +54,11 @@ def post(user_id):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     user_obj= users.find_one({'email': session['email']})
+    avatar = user_obj['avatar']
+    print(avatar)
     post = {
-        'user_obj':user_obj,
         'user_id':user_id,
+        'user_avatar':avatar,
         'created_at':dt_string,
         'content':request.form.get('content')
     }

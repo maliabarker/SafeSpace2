@@ -67,14 +67,9 @@
                 </div>
                 
                 <!--——————————————Pseudo Post One———————————————————————————-->
+                
                 <div>
-                    {% for post in posts %}
-                        <p>{{ post.content }}</p>
-                        <p>{{ post.user_obj }}</p>
-                    {% endfor %}
-                </div>
-                <div>
-                    {% for post in posts %}
+                    {% for post in posts|reverse %}
                         <div class="container mt-5">
                             <div class="col-10 offset-sm-1 pb-3">
                                 <div class="row d-flex justify-content-end">
@@ -86,7 +81,7 @@
                             <div class="col-10 offset-sm-1 p-4 bg-light" style="border-radius:35px">
                                 <div class="col-2">
                                     <div class="border rounded-circle" id="pseudo-post-circle"></div>
-                                    <img src="{{ user_obj.avatar }}" alt="food avatar" id="pseudo-avatar-img" width="116">
+                                    <img src="{{ post.user_avatar }}" alt="food avatar" id="pseudo-avatar-img" width="116">
                                 </div>
                                 <div class="col-10 offset-sm-1">
                                     <hr>
@@ -104,6 +99,12 @@
                             </div>
                             <hr class="mb-5">
                         </div>
+                    {% endfor %}
+                </div>
+                <div>
+                    {% for post in posts %}
+                        <p>{{ post.content }}</p>
+                        <p>{{ post.user_avatar }}</p>
                     {% endfor %}
                 </div>
                 
