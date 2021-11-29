@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main id="sign-up-page">
+        <!-- ————————————————————Landing page—————————————————————————————————————————————————————————— -->
+        <!--Squigly Top Graphic-->
+        <svg viewBox="0 0 490 90" preserveAspectRatio="xMinYMin meet">
+            <path d="M0 50 C200 110 350 0 500 50 L500 00 L0 0 Z"></path>
+        </svg>
+
+        <!--Title-->
+        <div class="container">
+            <h1 id="title">SafeSpace</h1>
+        </div>
+        
+        <!--Page Content-->
+        <div class="container" id="landing-pg-content">
+            <div class="row">
+                <!--Left Content-->
+                <div class="col-lg-5 text-center" id="landing-page-about">
+                    <p>SafeSpace is a <b>safe</b> and <b>anonymous</b> space for students to talk about <b><u>anything</u></b> related to mental health.</p>
+                    <p>&#127783;Whether you’re going through a depressive episode&#127783;</p> 
+                    <p>&#128101;have a family member or friend who is struggling with mental health&#128101;</p> 
+                    <p>&#128583;or you’re just frustrated with simple everyday things&#128583; </p>
+                    <p id="blue-hearts">&#128153; <i>you are welcomed to talk about it here </i>&#128153;</p>
+                    <img src="static/images/Blue-Table.png" width="500px">
+                </div>
+                <div class="col-lg-2"></div>
+
+
+                <!--Right Content-->
+                <div class="col-lg-5" id="sign-up-container">
+                    <div id="card-container">
+                        <div class="front">
+                            <h4 class="text-center mb-5">Get Started! &#127882;</h4>
+                            {% include 'partials/sign-up.html' %}
+                            <hr>
+                            <h4 class="text-center"><span id="or">or</span></h4>
+                            <div class="text-center">
+                                <p id="already-account">Already have an account?</p>
+                                <button class="text-center btn btn-primary mb-4" id="sign-in-btn">Sign In</button>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <h4 class="text-center mb-4">Sign In!</h4>
+                            <img src="static/images/animals.png" class="img-thumbnail img-fluid mx-auto d-block mb-5" alt="avatar choice animal" id="avatar-animals" width="90px">
+                            {% include 'partials/sign-in.html' %}
+                            <button class="btn btn-secondary float-right" onclick="flipCardBack()" id="back-to-sign-in">Back to Sign Up <i class="fa fa-arrow-circle-o-right"></i></button>
+                        </div>
+                    </div> 
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- ————————————————————community guidelines modal—————————————————————————————————————————————————————————— -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLongTitle">Community Guidelines &#128581;</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center" id="community-guidelines-content">
+                            <p>Guidelines are in place to make sure everyone feels safe and anyone can access help if they feel like anything is too much to handle. 
+                            <p id="food-for-thought">&#129504; Just some food for thought... &#129504;</p>
+                            <p>Recognition is suicide prevention. Kindness is suicide prevention. </p>
+                            <p>The people you see in class and the people you walk by on-campus every day are the ones using this app. Make sure you are using this app with only one thing in mind—empathy. </p>
+                        </div>
+
+                        <h4 class="text-center pt-3">Content Guidelines &#128221;</h4>
+                        <div class="text-center" id="community-guidelines-content">
+                            <p>&#128683; Spam will not be tolerated. &#128683;</p>
+                            <p>&#128683; Bullying will not be tolerated. &#128683;</p>
+                            <p>&#128683; Glorification of self-harm will not be tolerated. &#128683;</p>
+                            <p>&#128683; Inappropriate sexual content will not be tolerated. &#128683;</p>
+                        </div>
+                        
+                        <h4 class="text-center pt-3">How to Remove and Report Posts &#128465;</h4>
+                        <div class="text-center" id="community-guidelines-content">
+                            <p>Any harmful content can easily be removed from view by clicking the big red  ' <i class="fas fa-times" id="x"></i> '  on the top right of every post. </p>
+                            <p>If a post just seems ~off~ users can downvote it. Once it receives 5 downvotes, the post will be removed for review.</p>
+                            <p><b>Any</b> downvoted post—whether it receives 1 downvote or 5—will be reviewed and upheld against the community guidelines. </p>
+                            <p>This app is anonymous. However, you will be required to sign up with your Dominican University email for security purposes. Trust that your identity will never be revealed unless you violate community guidelines or you choose to do so under your discretion.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#agree-modal">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="agree-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Please agree to the community guidelines to continue using the site.</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>I have read the community guidelines and I agree that I will only use this app with <b>empathy</b> and <b>compassion</b> for myself and for others.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close-agree-modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Agree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        //uncheck function
+        function uncheckAll() {
+            document.querySelectorAll('input[type="checkbox"]')
+            .forEach(el => el.checked = false);
+        }
+
+        document.querySelector('#close-modal').addEventListener('click', uncheckAll)
+        document.querySelector('#close-agree-modal').addEventListener('click', uncheckAll)
+        document.querySelector('.close').addEventListener('click', uncheckAll)
+
+        //card flip function
+
+        const card = document.getElementById('card-container')
+        const signInBtn = document.getElementById('sign-in-btn')
+        const backBtn = document.getElementById('sign-up-back')
+
+        signInBtn.addEventListener('click', flipCard)
+        
+
+        function flipCard() {
+            card.classList.toggle("flipCard")
+            console.log('flipped')
+        }
+
+        function flipCardBack(e) {
+            card.classList.toggle("flipCardBack")
+            console.log('beep')
+        }
+
+    </script>
+{% endblock %}
