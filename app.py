@@ -23,6 +23,7 @@ def index():
 @app.route('/', methods=['GET', 'POST'])
 def login():
     message = ''
+    post = posts.find()
     if request.method=='POST':
         form_name = request.form['form-name']
         if form_name == 'form1':
@@ -53,7 +54,7 @@ def login():
                 user_obj= users.find_one({'email': session['email']})
 
                 print(user_obj)
-                return render_template('home.html', user=user_obj)
+                return render_template('home.html', user=user_obj, posts=post)
 
         elif form_name == 'form2':
             email = request.form.get('email')
@@ -67,7 +68,7 @@ def login():
                 if bcrypt.checkpw(password.encode('utf-8'), password_check):
                     session['email']=email_val
                     user_obj= users.find_one({'email': session['email']})
-                    return render_template('home.html', user=user_obj)
+                    return render_template('home.html', user=user_obj, posts=post)
                 else:
                     message = 'Incorrect password, please try again'  
                     return render_template('index.html', message=message)

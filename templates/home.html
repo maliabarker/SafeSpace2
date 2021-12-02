@@ -4,42 +4,8 @@
     {% include 'partials/navbar.html' %}
     <div class="container-fluid">
         <div class="row">
-
             <!--——————————————Sidebar———————————————————————————-->
             {% include 'partials/sidebar.html' %}
-            <!-- <nav class="col-3 sidebar navbar-expand-lg" style="position: sticky" id="sticky">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse show" id="sidebar">
-                    <ul class="nav flex-column list-group list-group-flush text-muted" id="sidebar">
-                        <li class="nav-item list-group-item bg-light dropdown-btn my-3" style="border:solid 1px; border-radius:10px">
-                            <div class="row align-items-center" id="dropdown-content">
-                                <img src="{{user.avatar}}" alt="squirrel avatar" height="40" class="ml-2">
-                                <span class="ml-2">{{ user.username }}</span>
-                                <i class="fa fa-caret-down ml-auto"></i>
-                            </div>
-                        </li>
-                        <div class="dropdown-container">
-                            <a href="view-posts.html"><li class="nav-item list-group-item bg-light"><i class="fas fa-clipboard"></i> View My Posts</li></a>
-                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-cog" id="settings" title="User Settings"></i> Settings</li>
-                            <li href="#" class="nav-item list-group-item bg-light mb-1"><i class="fas fa-lock"></i> Security and Privacy</li>
-                        </div>
-                        <li href="templates/home.html"class="nav-item list-group-item bg-light mb-1"><i class="fas fa-home"></i> Home</li>
-                        <li class="nav-item list-group-item bg-light dropdown-btn mb-1">
-                            <span><i class="fas fa-hands-helping" id="community" title="Community Resources"></i> Community Resources<i class="fa fa-caret-down pt-1"></i></span>
-                        </li>
-                        <div class="dropdown-container">
-                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-school"></i> On Campus</li>
-                            <li href="#" class="nav-item list-group-item bg-light"><i class="fas fa-wifi"></i> Online</li>
-                            <li href="#" class="nav-item list-group-item bg-light mb-1"><i class="fas fa-map-marked"></i> Near Me</li>
-                        </div>
-                        <li class="nav-item list-group-item bg-light mb-1"><i class="fas fa-comment-alt"></i> Channels</li>
-                        <li class="nav-item list-group-item bg-light mb-1"><i class="fas fa-flag"></i> Make a Report</li>
-                        <a href="templates/index.html"><li class="nav-item list-group-item bg-light"><i class="fas fa-power-off" id="logout" title="Logout"></i> Logout</li></a>
-                    </ul>
-                </div>
-            </nav> -->
             
             <div class="col-9">
                 <!--——————————————Top Title———————————————————————————-->
@@ -102,14 +68,7 @@
                         </div>
                     {% endfor %}
                 </div>
-                <div>
-                    {% for post in posts %}
-                        <p>{{ post.content }}</p>
-                        <p>{{ post.user_avatar }}</p>
-                    {% endfor %}
-                </div>
                 
-
                 <div class="container mt-5">
                     <div class="col-10 offset-sm-1 pb-3">
                         <div class="row d-flex justify-content-end">
