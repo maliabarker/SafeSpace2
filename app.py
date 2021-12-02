@@ -53,13 +53,14 @@ def login():
                 user_obj= users.find_one({'email': session['email']})
 
                 print(user_obj)
+                return render_template('home.html', user=user_obj)
 
-            return render_template('home.html', user=user_obj)
         elif form_name == 'form2':
             email = request.form.get('email')
             password = request.form.get('password')
 
             email_found = users.find_one({'email': email})
+
             if email_found:
                 email_val = email_found['email']
                 password_check = email_found['password']
@@ -69,7 +70,10 @@ def login():
                     return render_template('home.html', user=user_obj)
                 else:
                     message = 'Incorrect password, please try again'  
-                    return render_template('login.html', message=message)
+                    return render_template('index.html', message=message)
+            else:
+                message = 'There is no account with that email. Please create a new account'
+                return render_template('index.html', message=message)
 
 @app.route('/logout')
 def logout():
