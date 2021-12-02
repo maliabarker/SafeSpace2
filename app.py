@@ -24,49 +24,57 @@ def index():
 def login():
     message = ''
     if request.method=='POST':
-        email = request.form.get('email')
-        email_found = users.find_one({'email': email})
+        form_name = request.form['form-name']
+        if form_name == 'form1':
+            email = request.form.get('email')
+            email_found = users.find_one({'email': email})
 
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
+            password1 = request.form.get('password1')
+            password2 = request.form.get('password2')
 
-        if email_found:
-            message = 'There is already an account with this email'
-            return render_template('index.html', message=message)
-        elif password1 != password2:
-            message = 'Passwords do not match, please re-enter passwords'
-            return render_template('index.html', message=message)
-        else:
-            avatar = request.form['options']
-            hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
-            user = {
-                'email':request.form.get('email'),
-                'password':hashed,
-                'avatar': 'static/' + 'images/' + avatar + '.png',
-                'username':f'Anonymous {avatar}'
-            }
-            # print(user)
-            users.insert_one(user)
-            session['email']=request.form['email']
-            user_obj= users.find_one({'email': session['email']})
+            if email_found:
+                message = 'There is already an account with this email'
+                return render_template('index.html', message=message)
+            elif password1 != password2:
+                message = 'Passwords do not match, please re-enter passwords'
+                return render_template('index.html', message=message)
+            else:
+                avatar = request.form['options']
+                hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
+                user = {
+                    'email':request.form.get('email'),
+                    'password':hashed,
+                    'avatar': 'static/' + 'images/' + avatar + '.png',
+                    'username':f'Anonymous {avatar}'
+                }
+                # print(user)
+                users.insert_one(user)
+                session['email']=request.form['email']
+                user_obj= users.find_one({'email': session['email']})
 
-            print(user_obj)
+                print(user_obj)
 
-        return render_template('home.html', user=user_obj)
+            return render_template('home.html', user=user_obj)
+        elif form_name == 'form2':
+            email = request.form.get('email')
+            password = request.form.get('password')
 
-    elif request.method=='GET':
-        email = request.form.get('email')
-        password = request.form.get('password')
+            email_found = users.find_one({'email': email})
+            if email_found:
+                email_val = email_found['email']
+                password_check = email_found['password']
+                if bcrypt.checkpw(password.encode('utf-8'), password_check):
+                    session['email']=email_val
+                    user_obj= users.find_one({'email': session['email']})
+                    return render_template('home.html', user=user_obj)
+                else:
+                    message = 'Incorrect password, please try again'  
+                    return render_template('login.html', message=message)
 
-        email_found = users.find_one({'email': email})
-        if email_found:
-            email_val = email_found['email']
-            password_check = email_found['password']
-        session['email']=request.form['email']
-        user_obj= users.find_one({'email': session['email']})
-        return render_template('home.html', user=user_obj)
-
-
+@app.route('/logout')
+def logout():
+    session['email']=None
+    return render_template('index.html')
 
 
 @app.route('/home')
@@ -75,8 +83,6 @@ def home():
     post=posts.find()
     print(post)
     return render_template('home.html', user=user_obj, posts=post)
-
-
 
 
 
