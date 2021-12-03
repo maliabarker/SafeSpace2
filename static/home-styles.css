@@ -1,3 +1,6 @@
+body {
+    background-color: #f8f9fa;
+}
 nav {
     background-color: #676f83;
 }
@@ -151,7 +154,7 @@ nav {
 }
 
 #sticky {
-    background-color: white;
+    background-color: #f8f9fa;
 }
 
 #posts-avatar-img {
