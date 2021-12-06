@@ -76,7 +76,7 @@ svg {
         position: relative;
         bottom: 80px;
         left: 35px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 2rem;
         letter-spacing: 2.5px;
         margin-bottom: -50px;
@@ -87,7 +87,7 @@ svg {
     #title{
         position: relative;
         bottom: 110px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 2.5rem;
         letter-spacing: 2.5px;
         margin-bottom: -50px;
@@ -99,7 +99,7 @@ svg {
         position: relative;
         bottom: 140px;
         left: 10px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 3rem;
         letter-spacing: 2.5px;
         margin-bottom: -50px;
@@ -110,7 +110,7 @@ svg {
     #title{
         position: relative;
         bottom: 140px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 3.5rem;
         letter-spacing: 2.5px;
         margin-bottom: -50px;
@@ -121,7 +121,7 @@ svg {
     #title {
         position: relative;
         bottom: 190px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 4rem;
         letter-spacing: 2.5px;
         left: 50px;
@@ -133,10 +133,10 @@ svg {
     #title {
         position: relative;
         bottom: 210px;
-        color: rgb(255, 255, 255);
+        color: #f8f9fa;
         font-size: 4rem;
         letter-spacing: 2.5px;
         left: 50px;
-        margin-bottom: -50px;
+        margin-bottom: -80px;
     }
 }

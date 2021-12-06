@@ -45,7 +45,7 @@ def login():
                 user = {
                     'email':request.form.get('email'),
                     'password':hashed,
-                    'avatar': 'static/' + 'images/' + avatar + '.png',
+                    'avatar': '/static/' + 'images/' + avatar + '.png',
                     'username':f'Anonymous {avatar}'
                 }
                 # print(user)
@@ -89,15 +89,12 @@ def home():
     print(post)
     return render_template('home.html', user=user_obj, posts=post)
 
-
-
 @app.route('/<user_id>/home', methods=['POST'])
 def post(user_id):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     user_obj= users.find_one({'email': session['email']})
     avatar = user_obj['avatar']
-    print(avatar)
     post = {
         'user_id':user_id,
         'user_avatar':avatar,
@@ -106,7 +103,17 @@ def post(user_id):
     }
     posts.insert_one(post)
     print(post)
+    print(user_id)
     return redirect(url_for('home', user=user_obj))
+
+
+@app.route('/<user_id>/posts')
+def posts_index(user_id):
+    print(user_id)
+    posts_found = posts.find({'user_id': user_id})
+    # print(posts_found)
+    user_obj= users.find_one({'email': session['email']})
+    return render_template('view-posts.html', posts=posts_found, user=user_obj)
 
 
 if __name__ == '__main__':

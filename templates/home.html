@@ -2,6 +2,7 @@
 {% block title %}SafeSpace Home{% endblock %}
 {% block content %}
     {% include 'partials/navbar.html' %}
+
     <div class="container-fluid">
         <div class="row">
             <!--——————————————Sidebar———————————————————————————-->
@@ -45,7 +46,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-10 offset-sm-1 p-4 bg-white" style="border-radius:35px">
+                            <div class="col-10 offset-sm-1 p-4 bg-white" style="border-radius:35px" id="post">
                                 <div class="col-2">
                                     <div class="border rounded-circle" id="pseudo-post-circle"></div>
                                     <img src="{{ post.user_avatar }}" alt="food avatar" id="pseudo-avatar-img" width="116">

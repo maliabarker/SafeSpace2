@@ -9,19 +9,6 @@ nav {
     font-size: 2rem;
 }
 
-#make-post-container {
-    margin-bottom: 120px;
-}
-
-#make-post-title {
-    position: relative;
-    top: 15px;
-    font-size: 2rem;
-    margin-bottom: -27px;
-    letter-spacing: 4px;
-    font-weight: lighter;
-}
-
 .wave {
     animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
@@ -53,7 +40,8 @@ nav {
 }
 
 .dropdown-container > a {
-    color: #6e767d;
+    color: #575e64;
+    background-color: #cdcfd7;
 }
 
 .dropdown-container > a:hover {
@@ -62,16 +50,32 @@ nav {
     text-decoration: none;
 }
 
+#sidebar > a {
+    background-color: #cdcfd700;
+    color: #575e64;
+}
+
+#sidebar > a:hover {
+    text-decoration: none;
+    color: #4d96ac;
+}
+
+#sidebar > ul > li {
+    background-color: #cdcfd700;
+    color: #575e64;
+}
+
 #sidebar > ul > li:hover {
     cursor: pointer;
     color: #4d96ac;
 }
 
-#sidebar > ul > a{
-    color: #6e767d;
+#sidebar > ul > a > li{
+    color: #575e64;
+    background-color: #cdcfd700;
 }
 
-#sidebar > ul > a:hover{
+#sidebar > ul > a > li:hover{
     color: #4d96ac;
     text-decoration: none;
 }
@@ -89,6 +93,31 @@ nav {
 .fa-caret-down {
     float: right;
     padding-right: 8px;
+}
+
+#sticky > #sidebar{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #676f8300;
+    padding: 25px;
+}
+
+#sticky {
+    background-color: #f8f9fa;
+}
+
+#make-post-container {
+    margin-bottom: 120px;
+}
+
+#make-post-title {
+    position: relative;
+    top: 15px;
+    font-size: 2rem;
+    margin-bottom: -27px;
+    letter-spacing: 4px;
+    font-weight: lighter;
 }
 
 #avatar-circle {
@@ -109,7 +138,9 @@ nav {
 }
 
 #make-post {
-    background-color: #676f835d;
+    background-color: #d9dce6;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 #delete-post {
@@ -138,28 +169,13 @@ nav {
     right: 9px;
 }
 
-#pseudo-plant-avatar-img {
-    position: relative;
-    z-index: 2;
-    bottom: 15px;
-    left: 4px;
-}
-
-#sticky > #sidebar{
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    background-color: #676f834d;
-    padding: 25px;
-}
-
-#sticky {
-    background-color: #f8f9fa;
-}
-
 #posts-avatar-img {
     position: relative;
     z-index: 2;
     bottom: 18px;
     left: 14px;
+}
+
+#post {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }

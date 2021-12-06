@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}View {{ user.username }}'s Posts{% endblock %}
+
+{% block content %}
+    {% include 'partials/navbar.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            {% include 'partials/sidebar.html' %}
+
+            <div class="col-9">
+                <!--——————————————Top Title———————————————————————————-->
+                <h3 class="text-center pb-4 pt-5 text-muted">View Your Posts <span class="wave">&#x1f440;</span></h3>
+                
+                <!--——————————————Posts———————————————————————————-->
+                {% for post in posts|reverse %}
+                    <div class="container mt-5">
+                        <div class="col-10 offset-sm-1 p-4 bg-white" style="border-radius:35px" id="post">
+                            <div class="col-2">
+                                <div class="border rounded-circle" id="pseudo-post-circle"></div>
+                                <img src="{{ post.user_avatar }}" alt="food avatar" id="pseudo-avatar-img" width="116">
+                            </div>
+                            <div class="col-10 offset-sm-1">
+                                <hr>
+                                <p class="text-center">{{ post.content }}</p>
+                                <hr>
+                                <time datetime="{{ post.created_at }}" class="text-muted d-flex justify-content-end">{{ post.created_at }}</time>
+                            </div>
+                        </div>
+                        <div class="col-10 offset-sm-1 py-3">
+                            <div class="row d-flex justify-content-end pr-4">
+                                <p class="text-muted pr-2"><i class="fas fa-comments pr-2" id="comments" title="Comment"></i>0 comments</p>
+                                <p class="text-muted pr-2"><i class="fas fa-thumbs-up pr-2" title="Upvote Post" onclick="upvote()"></i>0 upvotes</p>
+                                <p class="text-muted pr-2"><i class="fas fa-thumbs-down pr-2" title="Downvote Post" onclick="downvote()"></i>0 downvotes</p>
+                            </div>
+                        </div>
+                        <div class="col-10 offset-sm-1">
+                            <div class="row">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button class="btn btn-outline-success px-4" data-toggle="modal" data-target="#edit-post-modal">Edit Post</button>
+                                </div>
+                                <div class="col-5">
+                                    <button class="btn btn-outline-danger px-4">Delete Post</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-5">
+                    </div>
+                    <div class="modal" tabindex="-1" role="dialog" id="edit-post-modal">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <img src="{{ user.avatar }}" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">{{ user.username }}</p>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="submit-post" method="POST" action="/{{ user._id }}/home">
+                    
+                                        <div class="form-group">
+                                            <textarea id="make-post-textarea" cols="50" rows="10" class="form-control p-2" name="content" placeholder="{{ post.content }}"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" form="submit-post" class="btn btn-primary">Post</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!--EDIT POST MODAL-->
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
