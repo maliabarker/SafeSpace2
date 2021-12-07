@@ -36,34 +36,36 @@
                         <div class="col-10 offset-sm-1">
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-end">
-                                    <button class="btn btn-outline-success px-4" data-toggle="modal" data-target="#edit-post-modal">Edit Post</button>
+                                    <button class="btn btn-outline-success px-4" data-toggle="modal" data-target="#EditModal_{{ post._id }}">Edit Post</button>
                                 </div>
                                 <div class="col-5">
-                                    <button class="btn btn-outline-danger px-4">Delete Post</button>
+                                    <form method='POST' action='/{{ user._id }}/posts/{{ post._id }}/delete'>
+                                        <button class="btn btn-outline-danger px-4" type="submit">Delete Post</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                         <hr class="mb-5">
                     </div>
-                    <div class="modal" tabindex="-1" role="dialog" id="edit-post-modal">
+
+                    <div class="modal" tabindex="-1" role="dialog" id="EditModal_{{ post._id }}">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <img src="{{ user.avatar }}" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">{{ user.username }}</p>
+                                    <img src="{{ user.avatar }}" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">{{ user.username }}{{ post._id }}</p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form id="submit-post" method="POST" action="/{{ user._id }}/home">
-                    
+                                    <form id="update-post-{{ post._id }}" method="POST" action="/{{ user._id }}/posts/{{ post._id }}/update">
                                         <div class="form-group">
                                             <textarea id="make-post-textarea" cols="50" rows="10" class="form-control p-2" name="content" placeholder="{{ post.content }}"></textarea>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" form="submit-post" class="btn btn-primary">Post</button>
+                                    <button type="submit" form="update-post-{{ post._id }}" class="btn btn-primary">Post</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -71,7 +73,6 @@
                     </div>
                 {% endfor %}
                 <!--EDIT POST MODAL-->
-                
             </div>
         </div>
     </div>

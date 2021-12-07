@@ -92,7 +92,7 @@ def home():
 @app.route('/<user_id>/home', methods=['POST'])
 def post(user_id):
     now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    dt_string = now.strftime("%d/%m/%Y %H:%M")
     user_obj= users.find_one({'email': session['email']})
     avatar = user_obj['avatar']
     post = {
@@ -104,17 +104,39 @@ def post(user_id):
     posts.insert_one(post)
     print(post)
     print(user_id)
+    print(post['dt_id'])
     return redirect(url_for('home', user=user_obj))
 
 
 @app.route('/<user_id>/posts')
 def posts_index(user_id):
-    print(user_id)
     posts_found = posts.find({'user_id': user_id})
-    # print(posts_found)
     user_obj= users.find_one({'email': session['email']})
     return render_template('view-posts.html', posts=posts_found, user=user_obj)
 
+@app.route('/<user_id>/posts/<post_id>/update', methods=['POST'])
+def post_update(user_id, post_id):
+    user_obj = users.find_one({'email': session['email']})
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M")
+    avatar = user_obj['avatar']
+    updated_post = {
+        'user_id':user_id,
+        'user_avatar':avatar,
+        'created_at':dt_string,
+        'content':request.form.get('content')
+    }
+    posts.update_one(
+        {'_id': ObjectId(post_id)},
+        {'$set':updated_post}
+    )
+    return redirect(url_for('posts_index', user_id=user_id))
+
+
+@app.route('/<user_id>/posts/<post_id>/delete', methods=['POST'])
+def post_delete(user_id, post_id):
+    posts.delete_one({'_id':ObjectId(post_id)})
+    return redirect(url_for('posts_index', user_id=user_id))
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
