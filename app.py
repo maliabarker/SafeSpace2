@@ -104,7 +104,6 @@ def post(user_id):
     posts.insert_one(post)
     print(post)
     print(user_id)
-    print(post['dt_id'])
     all_posts=posts.find()
     return redirect(url_for('home', user=user_obj, posts=all_posts))
 
