@@ -1,7 +1,90 @@
 {% extends 'base.html' %}
-{% block title %}Settings{% endblock %}
+{% block title %}View {{ user.username }}'s Settings{% endblock %}
+
 {% block content %}
     {% include 'partials/navbar.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            {% include 'partials/sidebar.html' %}
+
+            <div class="col-9">
+                <!--——————————————Top Title———————————————————————————-->
+                <h3 class="text-center pb-4 pt-5 text-muted">User Settings <span class="wave">&#9881;&#65039;</span></h3>
+                <div class="row pt-4 ml-5 d-flex justify-content-center">
+                    <div class="col-2 pt-5 ml-5">
+                        <div class="border rounded-circle" id="pseudo-post-circle"></div>
+                        <img src="{{ user.avatar }}" alt="food avatar" id="pseudo-avatar-img" width="116">
+                    </div>
+                    <div class="col-9 d-flex align-items-center pt-0">
+                        <div class="row">
+                            <button class="btn h4" data-toggle="modal" data-target="#change-avatar">Change Your Avatar</button>
+                            <button class="btn btn-outline-danger" data-toggle="modal" data-target="#delete-account-modal">Delete Your Account</button>
+                        </div>
+                    </div>
+
+                    <div class="modal" tabindex="-1" role="dialog" id="delete-account-modal">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <form id="delete-account" method="POST" action="/{{ user._id }}/settings/delete-account">
+                                        <h3 style="color: tomato;" class="text-center pt-4">Are You Sure You Want to Delete Your Account and All Your Posts?</h3>
+                                        <p class="text-muted text-center pt-3">You cannot undo this</p>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" form="delete-account" class="btn btn-outline-danger">Delete My Account</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
+                    <div class="modal" tabindex="-1" role="dialog" id="change-avatar">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <img src="{{ user.avatar }}" alt="squirrel avatar" width="50px" id="modal-avatar-img" class="pl-2"><p class="align-self-center pt-3 pl-2">Change Your Avatar</p>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="update-avatar" method="POST" action="/{{ user._id }}/settings/update-avatar">
+                                        <input type="hidden" name="email" value="{{ user.email }}">
+                                        <input type="hidden" name="password" value="{{ user.password }}">
+                                        
+                                        <div class="form-group">
+                                            <div class="btn-group btn-group-toggle pb-4" data-toggle="buttons">
+                                                <label class="btn btn-secondary active">
+                                                    <input type="radio" name="options" id="option1" value="animals" checked> <img src="/static/images/animals.png" alt="avatar choice animal" id="avatar-animals" class="img-fluid">Random Animal
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="options" id="option2" value="food"> <img src="/static/images/food.png" alt="avatar food choice" id="avatar-foods" class="img-fluid">Random Food 
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="options" id="option3" value="plant"> <img src="/static/images/plant.png" alt="avatar plant choice" id="avatar-plants" class="img-fluid">Random Plant
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="options" id="option4" value="cities"> <img src="/static/images/cities.png" alt="avatar cities choice" id="avatar-cities" class="img-fluid">Random City
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="options" id="option5" value="colors"> <img src="/static/images/colors.png" alt="avatar colors choice" id="avatar-colors" class="img-fluid">Random Color
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" form="update-avatar" class="btn btn-primary">Update Avatar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

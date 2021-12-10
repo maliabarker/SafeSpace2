@@ -138,5 +138,37 @@ def post_delete(user_id, post_id):
     posts.delete_one({'_id':ObjectId(post_id)})
     return redirect(url_for('posts_index', user_id=user_id))
 
+@app.route('/<user_id>/settings')
+def user_settings(user_id):
+    user_obj = users.find_one({'email': session['email']})
+    print(user_id)
+    return render_template('user-settings.html', user=user_obj)
+
+@app.route('/<user_id>/settings/update-avatar', methods=['POST'])
+def update_avatar(user_id):
+    
+    avatar = request.form['options']
+    updated_user = {
+        'email':request.form.get('email'),
+        'password':request.form.get('password'),
+        'avatar': '/static/' + 'images/' + avatar + '.png',
+        'username':f'Anonymous {avatar}'
+    }
+    print(avatar)
+    users.update_one(
+        {'_id': ObjectId(user_id)},
+        {'$set': updated_user}
+    )
+    user_obj = users.find_one({'email': session['email']})
+    return redirect(url_for('user_settings', user=user_obj, user_id=user_id))
+
+@app.route('/<user_id>/settings/delete-account', methods=['POST'])
+def user_delete(user_id):
+    print(user_id)
+    users.delete_one({'_id':ObjectId(user_id)})
+    posts.remove({'user_id':user_id})
+    session['email']=None
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True, port=5002)

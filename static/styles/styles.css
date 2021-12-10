@@ -1,3 +1,11 @@
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+}
+
 svg {
     fill: #bfebf7;
 }
