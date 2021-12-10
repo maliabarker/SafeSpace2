@@ -105,7 +105,8 @@ def post(user_id):
     print(post)
     print(user_id)
     print(post['dt_id'])
-    return redirect(url_for('home', user=user_obj))
+    all_posts=posts.find()
+    return redirect(url_for('home', user=user_obj, posts=all_posts))
 
 
 @app.route('/<user_id>/posts')
