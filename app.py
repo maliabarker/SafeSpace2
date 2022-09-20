@@ -12,7 +12,10 @@ load_dotenv()
 CONNECTION_STRING = os.getenv('MONGODB_URI')
 
 client = pymongo.MongoClient(CONNECTION_STRING)
-db = client.get_default_database()
+
+db = client.get_database('safespace')
+
+# db = client.get_default_database()
 users = db.users
 posts = db.posts
 
@@ -176,4 +179,4 @@ def user_delete(user_id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    app.run(debug=True)
