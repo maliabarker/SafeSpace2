@@ -4,15 +4,20 @@ from flask_pymongo import pymongo
 from datetime import datetime
 from bson.objectid import ObjectId
 import bcrypt
+from dotenv import load_dotenv
+import os
 
-CONNECTION_STRING = 'mongodb+srv://maliabarker:tpofbawf@safespace.8qywl.mongodb.net/safespace?retryWrites=true&w=majority'
+load_dotenv()
+
+CONNECTION_STRING = os.getenv('MONGODB_URI')
+
 client = pymongo.MongoClient(CONNECTION_STRING)
 db = client.get_default_database()
 users = db.users
 posts = db.posts
 
 app = Flask(__name__)
-app.secret_key = '9a5c0aaf287745d3b21371fb097bb5a22e6da0e9c8fb3bc39e34474f2f400f57'
+app.secret_key = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def index():
