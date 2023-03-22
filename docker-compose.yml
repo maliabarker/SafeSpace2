@@ -14,13 +14,9 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        entrypoint:
-            - flask
-            - run
-            - --host=${HOST}
+        command: gunicorn -w 4 -b 0.0.0.0:${FLASK_RUN_PORT} app:app
         environment:
           PYTHONUNBUFFERED: 1
-          FLASK_DEBUG: 1
         ports:
             - ${FLASK_RUN_PORT}:${FLASK_RUN_PORT}
         depends_on:
@@ -28,3 +24,17 @@ services:
         links:
             - mongo
         volumes: [".:/app"]
+        # entrypoint:
+        #     - flask
+        #     - run
+        #     - --host=${HOST}
+        # environment:
+        #   PYTHONUNBUFFERED: 1
+        #   FLASK_DEBUG: 1
+        # ports:
+        #     - ${FLASK_RUN_PORT}:${FLASK_RUN_PORT}
+        # depends_on:
+        #     - mongo
+        # links:
+        #     - mongo
+        # volumes: [".:/app"]

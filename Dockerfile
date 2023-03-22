@@ -1,5 +1,10 @@
-# Base python image
-FROM python:3.7-slim-buster
+# syntax=docker/dockerfile:1
+
+FROM python:3.9
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Copy the code into a folder named app
 ADD . /app
@@ -10,7 +15,8 @@ WORKDIR /app
 # Install App dependencies
 RUN pip3 install -r requirements.txt
 
-# Set ENV variables
-ENV PORT 5001
+# Make port 80 available to the world outside this container
+EXPOSE 5002
 
-CMD ["python", "-u", "app.py"]
+# Run app.py when the container launches
+CMD ["gunicorn", "--bind", "0.0.0.0:5002", "app:app"]
